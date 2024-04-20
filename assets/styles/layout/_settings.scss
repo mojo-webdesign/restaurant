@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+// ******VARIABLE-FONTS*******
+
+// title
+$font1:"Allura", cursive;
+//under-title 
+$font2:"Poppins", sans-serif;
+// paragraph
+$font3:"Roboto", sans-serif;
+
+
+
+
+// ******VARIABLE-COLOR*******
+// background
+$background:#21201e;
+
+// cards-background
+$color1:#eeeeee;
+$color2:#000000;
+$color3:#212020;
+
+// titles
+$hcolor:#95663e;
+
+// ********MIXIN********
+
+@mixin flexCentre {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flexColumn {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin grid {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+
+body {
+    min-height: 100dvh;
+}
+
+h1 {
+    font-family: "Allura", cursive;
+    color: #95663e;
+}
+
+h2 {
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase;
+}
+
+p {
+    font-family: "Roboto", sans-serif;
+}

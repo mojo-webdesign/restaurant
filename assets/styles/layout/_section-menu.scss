@@ -1,0 +1,109 @@
+@use "settings" as set; 
+
+main {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    background-color: set.$color3;
+    background-image: url(./../img/bg-menu-01.jpg);
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position-y: 400px;
+    padding: 0 0 5% 0;
+
+    .ctn-main {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 2fr;
+        width: 70%;
+        z-index: 1;
+        padding-top: 2%;
+
+        .ctn-head {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(3,1fr);
+            justify-items: center;
+            align-items: center;
+    
+            ul {
+                display: flex;
+                justify-content: space-evenly;
+                width: 100%;
+                list-style: none;
+                font-family: set.$font3;
+                color: set.$color1;
+
+                li {
+                    padding: 5px;
+                    transition: box-shadow 0.8s ease;
+
+                    &:hover {
+                        box-shadow: 0 2px 0 set.$color1;
+                    }
+                }
+            }
+        }
+
+        .ctn-menu {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            justify-items: center;
+            padding-bottom: 2%;
+            border-top : 4px solid set.$hcolor;
+            background-color: set.$color1;
+
+            .card-menu {
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                width: 90%;
+                border-bottom: 1px dashed;
+
+                div {
+                    font-family: set.$font2;
+                    padding: 2%; 
+
+                    h3 {
+                        font-weight: 400;
+                        font-size: 0.8rem;
+                        text-transform: uppercase;
+                    }
+
+                    span {
+                        font-weight: 200;
+                        font-size: 0.8rem;
+                    }
+                }
+
+                p {
+                    font-family: set.$font2;
+                    color: set.$hcolor;
+                    padding: 2%; 
+                }
+
+                img {
+                    border-radius: 100%;
+                    height: 70%;
+                    padding: 2%; 
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:950px) {
+    main {
+        padding: 0 0 25% 0;
+        .ctn-main {
+            grid-template-rows: 20% 2fr;
+            width: 80%;
+            .ctn-menu {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(8,1fr)
+            }
+        }
+    }
+}

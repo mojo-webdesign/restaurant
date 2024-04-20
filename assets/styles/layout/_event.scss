@@ -1,0 +1,125 @@
+@use "settings" as set; 
+
+article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: set.$color3;
+    padding: 5% 0;
+
+    .event-title {
+        padding-bottom: 2%;
+        text-align: center;
+
+        h1 {
+            line-height: 20px;
+            font-size: 2rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: set.$color1;
+        }
+    }
+
+    .event-img {
+        padding-bottom: 2%;
+    }
+
+    .ctn-event {
+        display: grid;
+        grid-template-columns: repeat(2, 30%) 40%;
+        grid-template-rows: repeat(2, 1fr);
+        gap: 20px;
+        width: 70%;
+        
+        .card-event-left-01 { 
+            grid-area: 1 / 1 / 2 / 3;
+            display: grid;
+            grid-template-columns: 40% 60%;
+            background-color:set.$color1;
+
+            .event-left-img {
+                background: url(./../img/event-01.jpg) center/cover;
+                @include set.flexColumn;
+                text-align: center;
+            }
+        }
+
+        .card-event-left-02 { 
+            grid-area: 2 / 1 / 3 / 3;
+            display: grid;
+            grid-template-columns: 40% 60%;
+            background-color:set.$color1;
+
+            .event-left-img {
+                background: url(./../img/event-02.jpg) center/cover;
+                @include set.flexColumn;
+                text-align: center;
+            } 
+        }
+        
+        .card-event-right{ 
+            grid-area: 1 / 3 / 3 / 4;
+            background: url(./../img/event-03.jpg) center/cover;
+            @include set.flexCentre;
+
+            .ctn-event-right{
+                background-color: set.$color1;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                width: 90%;
+                height: 90%;
+            }
+        }
+
+        .event-text {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+
+                h3 {
+                    font-family: set.$font3;
+                    font-weight: 300;
+                }
+
+                p:first-of-type{
+                    font-size: 0.8rem;
+                    color: rgb(173, 178, 182);
+                }
+                p:last-of-type{
+                    font-size: 0.8rem;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                }
+
+                h3,p{
+                    padding: 5%;
+                }
+        }
+
+        .event-date {
+            color: set.$color1;
+            background-color: set.$color3;
+            font-family: set.$font3;
+            padding: 5% 8%;
+
+            p:first-child{
+                font-size: 1.2rem;
+            }
+            p:last-child{
+                font-size: 0.7rem;
+                font-weight: 200;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    article {
+        display: none;
+    }
+}

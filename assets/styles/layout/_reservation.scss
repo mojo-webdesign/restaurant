@@ -1,0 +1,159 @@
+@use "settings" as set; 
+
+.reservation {
+    @include set.flexCentre;
+    padding: 5%;
+    background-color: set.$color3;
+
+    .ctn-resa {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: 1fr;
+        width: 90%;
+        background-color: set.$color2;
+
+        .ctn-resa-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            text-align: center;
+            align-items: center;
+            margin: 5%;
+            border: 2px dashed set.$color1;
+
+            div {
+                padding: 5%;
+
+                h1 {
+                    font-size: 2.5rem;
+                }
+
+                h2 {
+                    line-height: 10px;
+                    color: set.$color1;
+                    font-weight: 600;
+                }
+
+                h4 {
+                    font-family: set.$font2;
+                    font-weight: 600;
+                    color: set.$hcolor;
+                    text-transform: uppercase;
+                    padding: 3%;
+                }
+
+                p {
+                    color: set.$color1;
+                }
+            }
+
+            div:last-child {
+                p {
+                    color: set.$hcolor;
+                    font-weight: 600;
+                }
+            }
+        }
+
+        .ctn-resa-right {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            text-align: center;
+            align-items: center;
+            background-color: set.$color1;
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                line-height: 10px;
+                font-size: 1.8rem;
+                font-weight: 600;
+                color: set.$color2;
+            }
+
+            ul {
+                display: grid;
+                grid-template-columns: repeat(3,1fr);
+                grid-template-rows: repeat(2,1fr);
+                gap: 20px;
+
+                li {
+                    display: flex;
+                    justify-content: space-between;
+
+                    input, select, label {
+                        width: 100%;
+                        border: transparent;
+                        background-color: transparent;
+                        padding: 5%;
+                        font-family: set.$font2;
+                        font-size: 1rem;
+                        box-shadow: 0px 1px set.$color3 ;
+                    }
+
+                    input[type=text]:focus, input[type=tel]:focus, input[type=email]:focus {
+                        outline: 1px solid red;
+                    } 
+                }
+            }
+
+            button {
+                border-radius: 50px;
+                border: none;
+                padding: 2%;
+                width: 25%;
+                font-family: set.$font2;
+                font-weight: 600;
+                color: set.$color1;
+                background-color: set.$color2;
+                letter-spacing: 3px;
+                text-transform: uppercase;
+                transition: transform 0.8s ease;
+
+                &:hover {
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1030px) {
+    .reservation {
+        .ctn-resa{
+            display: flex;
+            flex-direction: column;
+            .ctn-resa-right {
+                .title-r-r{
+                    padding: 5%;
+                }
+                
+                .img-r-r{
+                    padding: 5%;
+                }
+                
+                form {
+                    width: 80%;
+                    ul {
+                        display: grid;
+                        grid-template-columns: 1fr;
+                        grid-template-rows: repeat(6,1fr);
+                        
+                        li {
+                            width: 100%;
+                        }
+                    }
+                }
+
+                button {
+                    margin: 8%;
+                    padding: 20px;
+                    width: 40%;
+                }
+            }
+        }
+    }
+}
